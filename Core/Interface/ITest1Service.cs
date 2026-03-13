@@ -1,7 +1,4 @@
-﻿
-using static AngularApp1.Server.Controllers.TestController;
-
-namespace Core.Interface
+﻿namespace Core.Interface
 {
     public interface ITest1Service
     {

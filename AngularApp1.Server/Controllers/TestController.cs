@@ -20,7 +20,7 @@ namespace AngularApp1.Server.Controllers
         public List<WeatherForecast> Weatherforecast()
         {
             // 你可以在這裡使用 _testService
-           var aa=_testService1.Weatherforecast1();
+            var aa = _testService1.Weatherforecast1();
             return _testService.Weatherforecast();
         }
     }

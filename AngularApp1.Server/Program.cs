@@ -8,12 +8,20 @@ builder.Services.AddOpenApi();
 builder.Services.AddControllers();
 
 builder.Services.Scan(scan => scan
-    // 改用這種方式，指定一個你專案中一定會有的類別（例如 Program）
-    .FromAssembliesOf(typeof(Program))
-    .AddClasses(classes => classes.Where(t => t.Name.EndsWith("Service")))
+    // 1. 指定掃描包含 ITestService 的那個 Assembly (Core 專案)
+    // 2. 也掃描包含 Program 的這個 Assembly (Server 專案)
+    .FromAssembliesOf(typeof(Program), typeof(Core.Interface.ITestService))
+
+    // 3. 找出所有類別
+    .AddClasses(classes => classes
+        // 確保你的實作類別結尾是 Service
+        .Where(t => t.Name.EndsWith("Service")))
+
+    // 4. 註冊為它所實作的介面
     .AsImplementedInterfaces()
+
+    // 5. 設定生命週期
     .WithScopedLifetime());
-//builder.Services.AddScoped<ITestService, TestService>();
 
 var app = builder.Build();
 

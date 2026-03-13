@@ -1,8 +1,5 @@
 ﻿
-
-using AngularApp1.Server.Controllers;
 using Core.Interface;
-using static AngularApp1.Server.Controllers.TestController;
 using static Core.Service.TestService;
 
 namespace Core.Service

@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36203.30 d17.14
+VisualStudioVersion = 17.14.36203.30
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "angularapp1.client", "angularapp1.client\angularapp1.client.esproj", "{E64771B6-940E-E937-AE23-81256BE008A8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngularApp1.Server", "AngularApp1.Server\AngularApp1.Server.csproj", "{BC8BED9E-7BA2-4987-8649-2A54E75B621D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{A5D82F5D-89E7-4939-9CC7-1E43C7F64D7B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +25,10 @@ Global
 		{BC8BED9E-7BA2-4987-8649-2A54E75B621D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC8BED9E-7BA2-4987-8649-2A54E75B621D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC8BED9E-7BA2-4987-8649-2A54E75B621D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5D82F5D-89E7-4939-9CC7-1E43C7F64D7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5D82F5D-89E7-4939-9CC7-1E43C7F64D7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5D82F5D-89E7-4939-9CC7-1E43C7F64D7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5D82F5D-89E7-4939-9CC7-1E43C7F64D7B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

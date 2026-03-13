@@ -21,6 +21,7 @@
     <ProjectReference Include="..\angularapp1.client\angularapp1.client.esproj">
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
+    <ProjectReference Include="..\Core\Core.csproj" />
   </ItemGroup>
 
 </Project>
