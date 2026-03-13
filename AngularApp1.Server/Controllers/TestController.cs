@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Core.Interface;
+using Microsoft.AspNetCore.Mvc;
+using static Core.Service.TestService;
 
 namespace AngularApp1.Server.Controllers
 {
@@ -6,27 +8,20 @@ namespace AngularApp1.Server.Controllers
     [Route("/Api/[controller]")] // 自動對應路徑為 /Test
     public class TestController : ControllerBase
     {
+        private readonly ITestService _testService;
+        private readonly ITest1Service _testService1;
+        public TestController(ITestService testService, ITest1Service testService1)
+        {
+            _testService = testService;
+            _testService1 = testService1;
+        }
+
         [HttpGet("[Action]")]
         public List<WeatherForecast> Weatherforecast()
         {
-            var summaries = new[]
-            {
-                "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-            };
-
-            var forecast = Enumerable.Range(1, 5).Select(index =>
-                new WeatherForecast
-                (
-                    DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                    Random.Shared.Next(-20, 55),
-                    summaries[Random.Shared.Next(summaries.Length)]
-                )).ToList();
-            return forecast;
-        }
-
-        public  record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-        {
-            public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+            // 你可以在這裡使用 _testService
+           var aa=_testService1.Weatherforecast1();
+            return _testService.Weatherforecast();
         }
     }
 }

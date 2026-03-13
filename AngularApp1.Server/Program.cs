@@ -1,8 +1,19 @@
+using Core.Interface;
+using Core.Service;
+using Scrutor; 
 var builder = WebApplication.CreateBuilder(args);
 
 // 1. 註冊服務
 builder.Services.AddOpenApi();
 builder.Services.AddControllers();
+
+builder.Services.Scan(scan => scan
+    // 改用這種方式，指定一個你專案中一定會有的類別（例如 Program）
+    .FromAssembliesOf(typeof(Program))
+    .AddClasses(classes => classes.Where(t => t.Name.EndsWith("Service")))
+    .AsImplementedInterfaces()
+    .WithScopedLifetime());
+//builder.Services.AddScoped<ITestService, TestService>();
 
 var app = builder.Build();
 
