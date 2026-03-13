@@ -1,7 +1,15 @@
+using Core.Entity;
 using Core.Interface;
+using Core.Repository;
 using Core.Service;
+using Microsoft.EntityFrameworkCore;
 using Scrutor; 
 var builder = WebApplication.CreateBuilder(args);
+var connectString = builder.Configuration.GetConnectionString("Yogurt");
+builder.Services.AddDbContext<YogurtContext>(options =>
+    options.UseMySql(connectString, ServerVersion.AutoDetect(connectString)));
+//register Repository
+builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 
 // 1. 註冊服務
 builder.Services.AddOpenApi();
@@ -15,7 +23,8 @@ builder.Services.Scan(scan => scan
     // 3. 找出所有類別
     .AddClasses(classes => classes
         // 確保你的實作類別結尾是 Service
-        .Where(t => t.Name.EndsWith("Service")))
+        .Where(t => t.Name.EndsWith("Service")||
+        t.Name.EndsWith("Repository")))
 
     // 4. 註冊為它所實作的介面
     .AsImplementedInterfaces()

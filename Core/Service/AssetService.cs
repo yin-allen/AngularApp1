@@ -1,20 +1,25 @@
 ﻿
+using Core.Entity;
 using Core.Interface;
 using static Core.Service.TestService;
 
 namespace Core.Service
 {
-    public class Test1Service : ITest1Service
+    public class AssetService : IAssetService
     {
+        private readonly IGenericRepository<Asset> grAsset;
 
-        public Test1Service
+        public AssetService
             (
+            IGenericRepository<Asset> grAsset
             )
         {
+            this.grAsset = grAsset;
         }
 
         public List<WeatherForecast> Weatherforecast1()
         {
+            var aa = grAsset.Q.ToList();
             var summaries = new[]
             {
                 "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"

@@ -1,6 +1,6 @@
 ﻿namespace Core.Interface
 {
-    public interface ITest1Service
+    public interface IAssetService
     {
         List<Service.TestService.WeatherForecast> Weatherforecast1();
     }

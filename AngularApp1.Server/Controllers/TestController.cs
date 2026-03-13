@@ -9,8 +9,8 @@ namespace AngularApp1.Server.Controllers
     public class TestController : ControllerBase
     {
         private readonly ITestService _testService;
-        private readonly ITest1Service _testService1;
-        public TestController(ITestService testService, ITest1Service testService1)
+        private readonly IAssetService _testService1;
+        public TestController(ITestService testService, IAssetService testService1)
         {
             _testService = testService;
             _testService1 = testService1;
