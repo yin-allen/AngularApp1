@@ -78,8 +78,7 @@
           "defaultConfiguration": "development",
           "options": {
             "proxyConfig": "src/proxy.conf.js",
-            "port": 59451,
-            "historyApiFallback": true
+            "port": 59451
           }
         },
         "extract-i18n": {
