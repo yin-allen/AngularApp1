@@ -6,7 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <SpaRoot>..\angularapp1.client</SpaRoot>
     <SpaProxyLaunchCommand>npm start</SpaProxyLaunchCommand>
-    <SpaProxyServerUrl>https://localhost:59451</SpaProxyServerUrl>
+    <SpaProxyServerUrl>http://localhost:59451</SpaProxyServerUrl>
   </PropertyGroup>
 
   <ItemGroup>
