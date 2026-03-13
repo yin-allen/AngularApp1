@@ -16,7 +16,7 @@ export class TestComponent implements OnInit {
 
   getWeather() {
     // 5. 呼叫 API，路徑直接寫 /weatherforecast，Proxy 會幫你轉給 5019
-    this.http.get<any[]>('/test/Weatherforecast').subscribe({
+    this.http.get<any[]>('/test3/Weatherforecast').subscribe({
       next: (result) => {
         this.forecasts = result;
         console.log('Test 畫面抓到資料了:', this.forecasts);
