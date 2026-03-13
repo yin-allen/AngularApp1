@@ -4,8 +4,7 @@ const target = 'http://localhost:5019';
 const PROXY_CONFIG = [
   {
     context: [
-      "/weatherforecast",
-      "/test3"
+      "/Api"
     ],
     target: target,
     secure: false,

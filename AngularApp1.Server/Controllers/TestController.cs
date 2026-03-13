@@ -3,8 +3,8 @@
 namespace AngularApp1.Server.Controllers
 {
     [ApiController] // 定義這是一個 API
-    [Route("[controller]")] // 自動對應路徑為 /Test
-    public class Test3Controller : ControllerBase
+    [Route("/Api/[controller]")] // 自動對應路徑為 /Test
+    public class TestController : ControllerBase
     {
         [HttpGet("[Action]")]
         public List<WeatherForecast> Weatherforecast()
